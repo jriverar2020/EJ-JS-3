@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gameWith = 900;
 
-    function jum() {
+    function jump() {
         if (isJumping) return;
         isJumping = true;
         let jumpHeight = 150;
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             botBottom += jumpSpeed;
             currentJumpHeight += jumpSpeed;
-            pixelBot.style.bottom = botBottom + px;
+            pixelBot.style.bottom = botBottom + 'px';
         }, 20);
     }
 
@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(gameLoopInterval);
                 clearInterval(obstacleInterval);
                 gameOver = true;
-                mensajeJuego = 'GAME OVER! Puntuación final: ' + score;
-                mensajeJuego += '\n Presione ESPACIO para reiniciar';
+                mensajeJuego.textContent = 'GAME OVER! Puntuación final: ' + score;
+                mensajeJuego.textContent += '\n Presione ESPACIO para reiniciar';
                 mensajeJuego.style.display = 'block';
                 suelo.style.animationPlayState = 'pause';
             }
